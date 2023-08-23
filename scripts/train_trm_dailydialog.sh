@@ -5,8 +5,8 @@ lr=5e-4
 TRAINDATA=./processed_data/dailydialog/train.cache
 VALIDDATA=./processed_data/dailydialog/valid.cache
 
-MODEL_DIR=./checkpoints/trm/dailydialog/$lr
-LOG_DIR=./logs/trm/dailydialog/$lr
+MODEL_DIR=./checkpoints/trm/dailydialog/${max_history_utterance}/${lr}
+LOG_DIR=./logs/trm/dailydialog/${max_history_utterance}/${lr}
 mkdir -p $MODEL_DIR
 mkdir -p $LOG_DIR
 

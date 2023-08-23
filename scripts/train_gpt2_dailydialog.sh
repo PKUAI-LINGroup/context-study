@@ -5,8 +5,8 @@ lr=1e-4
 TRAINDATA=./processed_data/dailydialog/train.cache
 VALIDDATA=./processed_data/dailydialog/valid.cache
 
-MODEL_DIR=./checkpoints/gpt2/dailydialog/$lr
-LOG_DIR=./logs/gpt2/dailydialog/$lr
+MODEL_DIR=./checkpoints/gpt2/dailydialog/${max_history_utterance}/${lr}
+LOG_DIR=./logs/gpt2/dailydialog/${max_history_utterance}/${lr}
 mkdir -p $MODEL_DIR
 mkdir -p $LOG_DIR
 

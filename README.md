@@ -8,6 +8,7 @@ conda activate context
 conda install pytorch==1.8.0 torchvision==0.9.0 torchaudio==0.8.0 cudatoolkit=11.1 -c pytorch -c conda-forge
 python -m pip install transformers==3.0.2
 python -m pip install tensorboard
+python -m pip install jsonlines
 ```
 
 ## Data preparation
@@ -30,10 +31,12 @@ After downloading raw data, please run scripts in `./prepare_data/` to preproces
 
 
 ## Models
-We build two dialog models: one trained from scratch on Transformer and the other fine-tuned on GPT2 released by [HuggingFace](https://github.com/huggingface/transformers).
+We build two dialog models: one trained from scratch on Transformer and the other fine-tuned on GPT2.
 
 + Transformer: 3 encoder layers, 3 decoder layers, 2 heads, 256 dimensions
 + GPT2: 12 layers, 12 heads, 768 dimensions
+
+We ues the pre-trained parameters released by [HuggingFace](https://github.com/huggingface/transformers). To prepare GPT2 model files, please download `config.json` and `pytorch_model.bin` from [here](https://huggingface.co/gpt2/tree/main) and move them to the folder `./gpt2_model/`.
 
 The input representation is shown in the figure below.
 ![image](https://github.com/PKUAI-LINGroup/context-study/blob/main/figs/dialog_model_input_representation.png)
@@ -43,3 +46,9 @@ The input representation is shown in the figure below.
 + Training Transformer on DailyDialog: `bash scripts/train_trm_dailydialog.sh`
 + Fine-tuning GPT2 on PersonaChat: `bash scripts/train_gpt2_personachat.sh`
 + Fine-tuning GPT2 on DailyDialog: `bash scripts/train_gpt2_dailydialog.sh`
+
+## Evaluation scripts
++ Evaluating Transformer on PersonaChat: `bash scripts/evaluate_trm_personachat.sh`
++ Evaluating Transformer on DailyDialog: `bash scripts/evaluate_trm_dailydialog.sh`
++ Evaluating GPT2 on PersonaChat: `bash scripts/evaluate_gpt2_personachat.sh`
++ Evaluating GPT2 on DailyDialog: `bash scripts/evaluate_gpt2_dailydialog.sh`

@@ -60,7 +60,7 @@ def main(args):
 def cli_main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--gpt2_vocab_dir", default="./gpt2_vocab", help="path to GPT2 tokenizer vocab file")
-    parser.add_argument("--gpt2_model_dir", default="/gpt2_model", help="path to GPT2 pretrained model file")
+    parser.add_argument("--gpt2_model_dir", default="./gpt2_model", help="path to GPT2 pretrained model file")
     parser.add_argument("--train_dataset", default="./processed_data/dailydialog/train.cache", type=str,
                         help="processed train dataset path")
     parser.add_argument("--valid_dataset", default="./processed_data/dailydialog/valid.cache", type=str,

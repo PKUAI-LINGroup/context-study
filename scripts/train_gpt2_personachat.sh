@@ -5,8 +5,8 @@ lr=8e-5
 TRAINDATA=./processed_data/personachat/train.cache
 VALIDDATA=./processed_data/personachat/valid.cache
 
-MODEL_DIR=./checkpoints/gpt2/personachat/$lr
-LOG_DIR=./logs/gpt2/personachat/$lr
+MODEL_DIR=./checkpoints/gpt2/personachat/${max_history_utterance}/${lr}
+LOG_DIR=./logs/gpt2/personachat/${max_history_utterance}/${lr}
 mkdir -p $MODEL_DIR
 mkdir -p $LOG_DIR
 
